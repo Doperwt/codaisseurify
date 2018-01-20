@@ -4,7 +4,8 @@
 <%= image_tag @artist.photo.image %>
 
 <ul><% @songs.each do |song| %>
-  <li> <%= song.name %> duration: <%= song.duration %></li>
+  <li> <%= song.name %> duration: <%= song.time_in_minutes %></li>
   <% end %>
 </ul>
+<%= render "songs/form"%>
 <%= link_to "Artist overview", root_path%>

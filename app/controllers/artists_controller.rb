@@ -2,7 +2,9 @@ class ArtistsController < ApplicationController
   before_action :all_artists, only: [:index]
   before_action :set_artist, only: [:show]
   def index ; end
-  def show ; end
+  def show
+    @song = @artist.songs.build
+  end
 
   def destroy
   end

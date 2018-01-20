@@ -1,1 +1,11 @@
-<% form_for @song do |s| %>
+<%= form_for( @song, :url => artist_songs_path(@artist.id))  do |s| %>
+  <div class="form-group">
+    <h3> Add a new song:</h3>
+    <%= s.label :name%>
+    <%= s.text_field :name, class: "form-control", autofocus: true,placeholder: 'Song name', autocomplete: "off"   %>
+    <%= s.label :duration%>
+    <%= s.number_field :duration,class: "form-control", autofocus: true,placeholder: 'Length of song'  %>
+     <%= s.submit  "Add song" ,  class: "btn btn-primary actions" %>
+  </div>
+
+<%end %>
