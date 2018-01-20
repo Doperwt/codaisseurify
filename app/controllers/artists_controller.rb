@@ -3,6 +3,10 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show]
   def index ; end
   def show ; end
+
+  def destroy
+  end
+
   private
   def all_artists
     @artists = Artist.all
@@ -10,5 +14,6 @@ class ArtistsController < ApplicationController
   def set_artist
     @artist = Artist.find(params[:id])
     @songs = Song.where(artist:@artist)
+    @artist.load_photos
   end
 end

@@ -1,5 +1,8 @@
 <h1> Welcome to the information page for <%=@artist.name%></h1>
 <p><%= @artist.bio %></p>
+<%@photos.each do |photo|%>
+<%= image_tag photo.image %>
+<%end%>
 <ul><% @songs.each do |song| %>
   <li> <%= song.name %> duration: <%= song.duration %></li>
   <% end %>
