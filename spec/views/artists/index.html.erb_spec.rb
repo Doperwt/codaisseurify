@@ -12,6 +12,4 @@ describe "artists/index.html.erb" do
     expect(rendered).to have_content Artist.second.name
     expect(rendered).to have_content Artist.last.name
   end
-
-
 end

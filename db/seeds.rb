@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Photo.destroy_all
 Artist.destroy_all
-artist1 = Artist.create!(name:"Alt-j",bio:"New band ")
-artist2 = Artist.create!(name:"Cake",bio:"Older band")
-artist3 = Artist.create!(name:"The Prodigy",bio:"fecking australians")
 artist4 = Artist.create!(name:"Wolfmother",bio:"Oldest band")
+artist1 = Artist.create!(name:"Alt-j",bio:"New band ")
+artist3 = Artist.create!(name:"The Prodigy",bio:"fecking australians")
+artist2 = Artist.create!(name:"Cake",bio:"Older band")
 
 Song.create!([
   {name:"Breezeblocks",duration:210,artist:artist1},
