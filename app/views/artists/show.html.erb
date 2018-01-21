@@ -4,7 +4,8 @@
 <%= image_tag @artist.photo.image %>
 
 <ul><% @songs.each do |song| %>
-  <li> <%= song.name %> duration: <%= song.time_in_minutes %></li>
+  <li> <%= song.name %> duration: <%= song.time_in_minutes %>
+    <%= link_to "Delete song",song_path(song) , method: :delete, data: { confirm: "Are you sure?" }%></li>
   <% end %>
 </ul>
 <%= render "songs/form"%>

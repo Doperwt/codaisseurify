@@ -1,12 +1,16 @@
 class SongsController < ApplicationController
- before_action :set_artist
   def create
     set_artist
-    @song = @artist.songs.build(song_params.merge({artist:@artist}))
+    @song = @artist.songs.build(song_params)
     if @song.save
       redirect_to artist_path(@artist.id), notice: "song added"
     else
     end
+  end
+  def destroy
+    set_song_artist
+    @song.destroy
+    redirect_to artist_path(@artist), notice: "song successfully deleted"
   end
   private
   def song_params
@@ -14,5 +18,9 @@ class SongsController < ApplicationController
   end
   def set_artist
     @artist = Artist.find(params[:artist_id])
+  end
+  def set_song_artist
+    @song = Song.find(params[:id])
+    @artist = Artist.find(@song.artist.id)
   end
 end
