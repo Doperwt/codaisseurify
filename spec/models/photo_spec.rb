@@ -1,5 +1,16 @@
 require 'rails_helper'
+RSpec.describe Photo, type: :model do
 
-# RSpec.describe Photo, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+  describe "associations" do
+    let!(:photo){create :photo}
+    it "photo has artist" do
+      photo.valid?
+      expect(photo.errors).not_to have_key(:artist)
+    end
+    it "song does not have artist" do
+      photo = Photo.new(artist: nil)
+      photo.valid?
+      expect(photo.errors).to have_key(:artist)
+    end
+  end
+end

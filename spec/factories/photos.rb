@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :photo do
-    artist nil
-    image "MyString"
+    artist        { build(:artist)}
+    image         "MyString"
   end
 end
