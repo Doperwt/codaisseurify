@@ -3,7 +3,7 @@ class Song < ApplicationRecord
   validates :name, presence: true
   validates :duration, presence: true
   def time_in_minutes
-    return  "#{self.duration/60} and #{self.duration%60} seconds"
+    return  "#{self.duration/60} minutes and #{self.duration%60} seconds"
   end
 
 end

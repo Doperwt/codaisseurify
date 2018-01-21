@@ -1,12 +1,14 @@
 class ArtistsController < ApplicationController
   before_action :all_artists, only: [:index]
-  before_action :set_artist, only: [:show]
+  before_action :set_artist, only: [:show,:destroy]
   def index ; end
   def show
     @song = @artist.songs.build
   end
 
   def destroy
+    @artist.destroy
+    redirect_to root_path, notice: "artist successfully deleted, you monster"
   end
 
   private

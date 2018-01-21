@@ -1,4 +1,4 @@
-<h1> Welcome to the information page for <%=@artist.name%></h1>
+<h1> Welcome to the information page for <%=@artist.name%>  <%= link_to "Delete artist",artist_path(@artist) , method: :delete, data: { confirm: "Are you sure?, go on do it" }%></h1>
 <p><%= @artist.bio %></p>
 
 <%= image_tag @artist.photo.image %>
