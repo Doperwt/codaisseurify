@@ -1,12 +1,23 @@
-<h1> Welcome to the information page for <%=@artist.name%>  <%= link_to "Delete artist",artist_path(@artist) , method: :delete, data: { confirm: "Are you sure?, go on do it" }%></h1>
+<h2> Welcome to the information page for <%=@artist.name%>
+<%= link_to "Delete artist",artist_path(@artist) , method: :delete, data: { confirm: "Are you sure?, go on do it" }, class:"button"%></h2>
+<div class="bigbox">
+<div class="panelbox floatl">
+<%= image_tag @artist.photo.image, class:"picture_scale" %>
 <p><%= @artist.bio %></p>
+</div>
 
-<%= image_tag @artist.photo.image %>
-
+<div class="panelbox floatl">
 <ul><% @songs.each do |song| %>
+  <div>
   <li> <%= song.name %> duration: <%= song.time_in_minutes %>
-    <%= link_to "Delete song",song_path(song) , method: :delete, data: { confirm: "Are you sure?" }%></li>
+    <%= link_to "Delete song",song_path(song) , method: :delete, data: { confirm: "Are you sure?" }, class: "button"%></li>
+  </div>
   <% end %>
 </ul>
+</div>
+
+<div class="panelbox floatl">
 <%= render "songs/form"%>
-<%= link_to "Artist overview", root_path%>
+</div>
+<%= link_to "Artist overview", root_path, class: "button button-red bottom"%>
+</div>

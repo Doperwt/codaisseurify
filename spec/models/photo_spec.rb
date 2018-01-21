@@ -7,7 +7,7 @@ RSpec.describe Photo, type: :model do
       photo.valid?
       expect(photo.errors).not_to have_key(:artist)
     end
-    it "song does not have artist" do
+    it "photo does not have artist" do
       photo = Photo.new(artist: nil)
       photo.valid?
       expect(photo.errors).to have_key(:artist)

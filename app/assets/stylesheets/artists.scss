@@ -1,3 +1,60 @@
 // Place all the styles related to the artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.panelbox{
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 45%;
+}
+.floatl{
+  float: left;
+}
+.floatr{
+  float: right;
+}
+.bigbox{
+  border: 3px solid black;
+  border-radius: 10px;
+  width: 100%;
+  height: 800px;
+}
+li{
+  padding: 10px;
+}
+ul{
+  list-style-type: none;
+}
+.button{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background: darkblue;
+}
+.button-red{
+  background: red;
+  color: white;
+}
+.button:hover{
+  background:grey;
+}
+.button:visited{
+  color: white;
+  text-decoration: none;
+
+}
+.button:link{
+  color: white;
+  text-decoration: none;
+
+}
+.bottom{
+  position: absolute;
+  bottom: 20px;
+}
+.picture_scale{
+  width:90%;
+  height: auto;
+}
