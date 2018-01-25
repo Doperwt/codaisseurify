@@ -6,7 +6,6 @@ class ArtistsController < ApplicationController
 
   end
   def show
-    @song = @artist.songs.build
   end
 
   def destroy
@@ -26,12 +25,12 @@ class ArtistsController < ApplicationController
   def need_sort
     case @search
     when "Name Ascending"
-      @artists.order!('name ASC')
+      @artists.order!(name: :asc )
     when "Name Descending"
-      @artists.order!('name DESC')
-    when "CA"
+      @artists.order!(name: :desc)
+    when "Created Ascending"
       @artists.order!(created_at: :asc )
-    when "CD"
+    when "Created Descending"
       @artists.order!(created_at: :desc )
     else
       @artists.order!(name: :asc)
