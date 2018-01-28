@@ -7,14 +7,14 @@
 </div>
 
 <div class="panelbox floatl">
-  <ul><% @songs.each do |song| %>
+  <ul id="song_list"><% @songs.each do |song| %>
     <div id="song-<%=song.id%>">
     <li class = "song"> <%= song.name %> duration: <%= song.time_in_minutes %>
       <%= link_to "Delete song",artist_song_path(@artist,song) , method: :delete, data: { confirm: "Are you sure?" }, class: "button", id:"delete_song"%></li>
     </div>
     <% end %>
   </ul>
-  <%= link_to "Remove all songs", artist_path(@artist),class:"button button-red", id:"delete-all-songs"%>
+  <%= link_to "Remove all songs", artist_path(@artist),class:"button button-red", id:"delete_all_songs"%>
 </div>
 
 <div class="panelbox floatl">

@@ -14,8 +14,13 @@ class Api::ArtistsController < ApplicationController
 
     end
   end
+
+
+  private
   def set_artist
     @artist = Artist.find(params[:id])
     @songs = @artist.songs.all
   end
+
+
 end

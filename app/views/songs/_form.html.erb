@@ -8,7 +8,7 @@
     <%= s.text_field :name, class: "form-control", autofocus: true,placeholder: 'Song name', autocomplete: "off"   %>
     <%= s.label :duration%>
     <%= s.number_field :duration,class: "form-control", autofocus: true,placeholder: 'Length of song'  %>
-     <%= s.submit  "Add song"  %>
+     <%= s.submit  "Add song", id:"new_song" %>
   </div>
 
 <%end %>
