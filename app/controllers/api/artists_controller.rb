@@ -1,18 +1,16 @@
 class Api::ArtistsController < ApplicationController
-  before_action :set_artist
   def show
+    set_artist
     render status: 200, json: {
-      artist: @artist
+      artist: @artist,
       songs: @songs
     }.to_json
   end
   def destroy
-
-    if
-
-    else
-
-    end
+    @artist = Artist.find(params[:id])
+    artist_id = @artist.id
+    @artist.destroy
+    render status:200 , json:{ id:artist_id, notice:"artist removed"}
   end
 
 
