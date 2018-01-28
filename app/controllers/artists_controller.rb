@@ -20,7 +20,7 @@ class ArtistsController < ApplicationController
   end
   def set_artist
     @artist = Artist.find(params[:id])
-    @songs = Song.where(artist:@artist)
+    @songs = @artist.songs.all
   end
   def need_sort
     case @search
