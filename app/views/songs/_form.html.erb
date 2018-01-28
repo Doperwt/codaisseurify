@@ -1,8 +1,6 @@
 <%= form_for [@artist, @artist.songs.new] do |s| %>
   <div class="form" id="<%=@artist.id%>">
     <h3> Add a new song:</h3>
-    <%= hidden_field_tag :artist_id, @artist.id %>
-
     <%= s.label :name%>
 
     <%= s.text_field :name, class: "form-control", autofocus: true,placeholder: 'Song name', autocomplete: "off"   %>

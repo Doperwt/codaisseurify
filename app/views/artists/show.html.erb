@@ -8,8 +8,8 @@
 
 <div class="panelbox floatl">
   <ul id="song_list"><% @songs.each do |song| %>
-    <div id="song-<%=song.id%>">
-    <li class = "song"> <%= song.name %> duration: <%= song.time_in_minutes %>
+    <div id=<%= song.id%> class = "song">
+    <li> <%= song.name %> duration: <%= song.time_in_minutes %>
       <%= link_to "Delete song",artist_path(@artist) , class: "delete_song button", id:song.id%></li>
     </div>
     <% end %>
