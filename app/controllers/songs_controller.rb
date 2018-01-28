@@ -7,11 +7,11 @@ class SongsController < ApplicationController
     else
     end
   end
-  def destroy
-    set_song_artist
-    @song.destroy
-    redirect_to artist_path(@artist), notice: "song successfully deleted"
-  end
+  # def destroy
+  #   set_song_artist
+  #   @song.destroy
+  #   redirect_to artist_path(@artist), notice: "song successfully deleted"
+  # end
   private
   def song_params
      params.require(:song).permit( :name, :duration)

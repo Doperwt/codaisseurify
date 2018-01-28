@@ -1,5 +1,5 @@
 <h2 id="<%=@artist.id%>"> Welcome to the information page for <%=@artist.name%>
-<%= link_to "Delete artist",artist_path(@artist) , method: :delete, data: { confirm: "Are you sure?, go on do it" }, class:"button", id:"delete_artist"%></h2>
+<%= link_to "Delete artist",artist_path(@artist) , class:"button", id:"delete_artist"%></h2>
 <div class="bigbox">
 <div class="panelbox floatl">
 <%= image_tag @artist.photo.image, class:"picture_scale" %>
@@ -10,7 +10,7 @@
   <ul id="song_list"><% @songs.each do |song| %>
     <div id="song-<%=song.id%>">
     <li class = "song"> <%= song.name %> duration: <%= song.time_in_minutes %>
-      <%= link_to "Delete song",artist_song_path(@artist,song) , method: :delete, data: { confirm: "Are you sure?" }, class: "button", id:"delete_song"%></li>
+      <%= link_to "Delete song",artist_path(@artist) , class: "delete_song button", id:song.id%></li>
     </div>
     <% end %>
   </ul>

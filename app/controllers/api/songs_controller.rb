@@ -11,7 +11,10 @@ class Api::SongsController < ApplicationController
 
   end
   def destroy
-    set_song_artist
+    @song = Song.find(params[:id])
+    song_id = @song.id
+    @song.destroy
+    render status:200 , json:{ id:song_id, notice:"song removed"}
   end
   private
   def song_params
