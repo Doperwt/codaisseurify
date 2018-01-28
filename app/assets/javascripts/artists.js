@@ -5,9 +5,10 @@ function submitNewSong(event){
   createSong($("#song_name").val(), $("#song_duration").val() ,artistId);
   $("#song_name").val(null);
   $("#song_duration").val(null);
-  $("#submit_song").prop('disabled', false);
-  submit = $("#submit_song")[0];
-  console.log(submit);
+  // submit = $("#submit_song")[0];
+  //   submit.disabled = false;
+  // console.log(submit);
+
 };
 
 function createSong(songTitle,duration,artistId){
@@ -33,11 +34,15 @@ function createSong(songTitle,duration,artistId){
       listItem.append(destroyButton);
       div.append(listItem);
       list.append(div);
+      $("#submit_song").prop("disabled", false);
+
     })
     .fail(function(error) {
     console.log(error);
-    error_message = error.responseJSON.title[0];
+    error_message = error.responseJSON.errors[0];
     showError(error_message);
+    $("#submit_song").prop("disabled", false);
+
   });
 
 
